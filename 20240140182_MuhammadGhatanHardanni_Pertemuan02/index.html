@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asisten AI Bengkel Motor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <h1>Asisten AI Bengkel Motor</h1>
+        <nav>
+            <ul class="nav">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#artikel">Artikel</a></li>
+                <li><a href="#konsultasi">Konsultasi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h2>Bengkel Lebih Maju dengan AI</h2>
+                <p>Solusi digital praktis untuk bantu atur jadwal servis dan kelola antrean pelanggan Anda secara otomatis.</p>
+            </div>
+            <div class="hero-image">
+                <img src="tempat_bengkel.jpg" alt="tempat bengkel motor">
+            </div>
+        </section>
+
+        <section id="layanan">
+            <h2>Layanan Utama</h2>
+            <ul class="feature-grid">
+                <li class="feature-card"><strong>Pengingat Servis:</strong> Kirim WA otomatis saat waktunya ganti oli.</li>
+                <li class="feature-card"><strong>Bot Booking:</strong> Pelanggan bebas daftar servis 24 jam via chat.</li>
+                <li class="feature-card"><strong>Cek Stok:</strong> Prediksi kapan sparepart akan habis secara akurat.</li>
+            </ul>
+        </section>
+
+        <article id="artikel">
+            <h2>Kenapa Butuh AI?</h2>
+            <p>Mekanik sering terlalu sibuk untuk balas pesan. Dengan AI, bengkel bisa otomatis membalas chat, mengatur
+                antrean, dan memberikan estimasi harga. Pelanggan jadi lebih puas dan pasti kembali lagi.</p>
+
+            <img src="images.jpg" alt="Mekanik sedang memperbaiki sepeda motor">
+        </article>
+
+        <section id="konsultasi">
+            <h2>Daftar Konsultasi Gratis</h2>
+            <p>Isi form ini untuk berdiskusi dengan tim kami tentang kebutuhan Anda.</p>
+
+            <form action="#" method="POST">
+                <label for="nama_pemilik">Nama Pemilik:</label>
+                <input type="text" id="nama_pemilik" name="nama_pemilik" required>
+                <br><br>
+
+                <label for="nama_bengkel">Nama Bengkel:</label>
+                <input type="text" id="nama_bengkel" name="nama_bengkel" required>
+                <br><br>
+
+                <label for="email">Email / Nomor WhatsApp:</label>
+                <input type="text" id="email" name="email" required>
+                <br><br>
+
+                <fieldset>
+                    <legend>Rata-rata Pelanggan per Hari:</legend>
+                    <input type="radio" id="pelanggan_sedikit" name="jumlah_pelanggan" value="kurang_dari_10" required>
+                    <label for="pelanggan_sedikit">Kurang dari 10 motor</label><br>
+
+                    <input type="radio" id="pelanggan_sedang" name="jumlah_pelanggan" value="10_sampai_30">
+                    <label for="pelanggan_sedang">10 - 30 motor</label><br>
+
+                    <input type="radio" id="pelanggan_banyak" name="jumlah_pelanggan" value="lebih_dari_30">
+                    <label for="pelanggan_banyak">Lebih dari 30 motor</label>
+                </fieldset>
+                <br>
+
+                <fieldset>
+                    <legend>Fitur yang Ingin Dicoba:</legend>
+                    <input type="checkbox" id="fitur_pengingat" name="fitur_ai[]" value="pengingat_servis">
+                    <label for="fitur_pengingat">Pengingat Servis (WA Bot)</label><br>
+
+                    <input type="checkbox" id="fitur_reservasi" name="fitur_ai[]" value="reservasi">
+                    <label for="fitur_reservasi">Chatbot Reservasi</label><br>
+
+                    <input type="checkbox" id="fitur_stok" name="fitur_ai[]" value="manajemen_stok">
+                    <label for="fitur_stok">Prediksi Stok Sparepart</label>
+                </fieldset>
+                <br>
+
+                <label for="pesan_tambahan">Kendala Bengkel (Opsional):</label><br>
+                <textarea id="pesan_tambahan" name="pesan_tambahan" rows="4" cols="50"></textarea>
+
+                <br><br>
+                <button type="submit">Kirim Konsultasi</button>
+            </form>
+        </section>
+
+    </main>
+
+    <aside id="tips">
+        <h2>Tips Konsultasi</h2>
+        <p>Mulai catat nomor HP dan tanggal servis pelanggan. Data ini jadi modal utama AI untuk mengirim pengingat
+            ganti oli bulan depan!</p>
+    </aside>
+
+    <footer>
+        <p>&copy; 2026 Asisten AI Bengkel Motor</p>
+    </footer>
+
+</body>
+
+</html>
