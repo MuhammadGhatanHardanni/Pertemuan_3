@@ -19,12 +19,17 @@
 
     <header class="site-header fade-in">
         <h1>Asisten AI Bengkel Motor</h1>
-        <nav>
-            <ul class="nav">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#layanan">Layanan</a></li>
-                <li><a href="#artikel">Artikel</a></li>
-                <li><a href="#konsultasi">Konsultasi</a></li>
+        <nav class="main-nav">
+            <button class="hamburger" id="hamburger-btn" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav" id="nav-menu" role="menu">
+                <li role="none"><a href="#home" role="menuitem">Beranda</a></li>
+                <li role="none"><a href="#layanan" role="menuitem">Layanan</a></li>
+                <li role="none"><a href="#artikel" role="menuitem">Artikel</a></li>
+                <li role="none"><a href="#konsultasi" role="menuitem">Konsultasi</a></li>
             </ul>
         </nav>
     </header>
@@ -139,5 +144,24 @@
         <p>&copy; 2026 Asisten AI Bengkel Motor</p>
     </footer>
 
+    <script>
+        const btn = document.getElementById('hamburger-btn');
+        const menu = document.getElementById('nav-menu');
+
+        btn.addEventListener('click', () => {
+            const isOpen = menu.classList.toggle('nav--open');
+            btn.classList.toggle('hamburger--open', isOpen);
+            btn.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Tutup menu saat klik salah satu link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('nav--open');
+                btn.classList.remove('hamburger--open');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
 </html>

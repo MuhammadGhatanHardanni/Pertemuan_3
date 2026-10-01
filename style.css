@@ -151,7 +151,51 @@ header, main, aside, footer {
     display: flex;
     gap: 2.5rem;
     list-style: none;
-    flex-wrap: wrap; /* Ketentuan 1 */
+}
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all var(--transition);
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.hamburger:hover {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: var(--primary-light);
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 4px;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: center;
+}
+
+/* Animasi ikon menjadi X */
+.hamburger--open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger--open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger--open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 .nav a {
@@ -553,17 +597,79 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    /* Navbar mobile: header tetap horizontal, hamburger muncul */
     .site-header {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1.5rem;
+        flex-direction: row;
+        padding: 1rem 1.5rem;
         border-radius: 20px;
         top: 1rem;
+        justify-content: space-between;
+        align-items: center;
     }
 
+    .main-nav {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Nav menu tersembunyi — muncul sebagai dropdown */
     .nav {
-        justify-content: center;
-        gap: 1.5rem;
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        min-width: 180px;
+        overflow: hidden;
+        z-index: 999;
+        /* Animasi masuk */
+        opacity: 0;
+        transform: translateY(-8px) scale(0.97);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav.nav--open {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+    }
+
+    .nav li {
+        width: 100%;
+    }
+
+    .nav a {
+        display: block;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-muted);
+    }
+
+    .nav li:last-child a {
+        border-bottom: none;
+    }
+
+    .nav a::after {
+        display: none;
+    }
+
+    .nav a:hover {
+        background: rgba(59, 130, 246, 0.06);
+        color: var(--primary);
+        padding-left: 2rem;
+        transition: all 0.2s ease;
     }
 
     .hero {
