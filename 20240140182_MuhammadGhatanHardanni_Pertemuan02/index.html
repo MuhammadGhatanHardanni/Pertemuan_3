@@ -5,12 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asisten AI Bengkel Motor</title>
+    <!-- Tambahan Font/Icon agar lebih modern -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header class="site-header">
+    <!-- Latar belakang glowing modern -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <header class="site-header fade-in">
         <h1>Asisten AI Bengkel Motor</h1>
         <nav>
             <ul class="nav">
@@ -33,12 +40,21 @@
             </div>
         </section>
 
-        <section id="layanan">
+        <section id="layanan" class="fade-in">
             <h2>Layanan Utama</h2>
             <ul class="feature-grid">
-                <li class="feature-card"><strong>Pengingat Servis:</strong> Kirim WA otomatis saat waktunya ganti oli.</li>
-                <li class="feature-card"><strong>Bot Booking:</strong> Pelanggan bebas daftar servis 24 jam via chat.</li>
-                <li class="feature-card"><strong>Cek Stok:</strong> Prediksi kapan sparepart akan habis secara akurat.</li>
+                <li class="feature-card">
+                    <div class="icon-box"><i class='bx bx-message-rounded-dots'></i></div>
+                    <strong>Pengingat Servis:</strong> Kirim WA otomatis saat waktunya ganti oli.
+                </li>
+                <li class="feature-card">
+                    <div class="icon-box"><i class='bx bx-bot'></i></div>
+                    <strong>Bot Booking:</strong> Pelanggan bebas daftar servis 24 jam via chat.
+                </li>
+                <li class="feature-card">
+                    <div class="icon-box"><i class='bx bx-box'></i></div>
+                    <strong>Cek Stok:</strong> Prediksi kapan sparepart akan habis secara akurat.
+                </li>
             </ul>
         </section>
 
@@ -55,48 +71,58 @@
             <p>Isi form ini untuk berdiskusi dengan tim kami tentang kebutuhan Anda.</p>
 
             <form action="#" method="POST">
-                <label for="nama_pemilik">Nama Pemilik:</label>
-                <input type="text" id="nama_pemilik" name="nama_pemilik" required>
-                <br><br>
+                <div class="form-group">
+                    <label for="nama_pemilik">Nama Pemilik:</label>
+                    <input type="text" id="nama_pemilik" name="nama_pemilik" placeholder="Masukkan nama Anda" required>
+                </div>
 
-                <label for="nama_bengkel">Nama Bengkel:</label>
-                <input type="text" id="nama_bengkel" name="nama_bengkel" required>
-                <br><br>
+                <div class="form-group">
+                    <label for="nama_bengkel">Nama Bengkel:</label>
+                    <input type="text" id="nama_bengkel" name="nama_bengkel" placeholder="Contoh: Bengkel Motor Jaya" required>
+                </div>
 
-                <label for="email">Email / Nomor WhatsApp:</label>
-                <input type="text" id="email" name="email" required>
-                <br><br>
+                <div class="form-group">
+                    <label for="email">Email / Nomor WhatsApp:</label>
+                    <input type="text" id="email" name="email" placeholder="0812xxxx atau email@domain.com" required>
+                </div>
 
                 <fieldset>
                     <legend>Rata-rata Pelanggan per Hari:</legend>
-                    <input type="radio" id="pelanggan_sedikit" name="jumlah_pelanggan" value="kurang_dari_10" required>
-                    <label for="pelanggan_sedikit">Kurang dari 10 motor</label><br>
-
-                    <input type="radio" id="pelanggan_sedang" name="jumlah_pelanggan" value="10_sampai_30">
-                    <label for="pelanggan_sedang">10 - 30 motor</label><br>
-
-                    <input type="radio" id="pelanggan_banyak" name="jumlah_pelanggan" value="lebih_dari_30">
-                    <label for="pelanggan_banyak">Lebih dari 30 motor</label>
+                    <div class="radio-group">
+                        <input type="radio" id="pelanggan_sedikit" name="jumlah_pelanggan" value="kurang_dari_10" required>
+                        <label for="pelanggan_sedikit">Kurang dari 10 motor</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="pelanggan_sedang" name="jumlah_pelanggan" value="10_sampai_30">
+                        <label for="pelanggan_sedang">10 - 30 motor</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="pelanggan_banyak" name="jumlah_pelanggan" value="lebih_dari_30">
+                        <label for="pelanggan_banyak">Lebih dari 30 motor</label>
+                    </div>
                 </fieldset>
-                <br>
 
                 <fieldset>
                     <legend>Fitur yang Ingin Dicoba:</legend>
-                    <input type="checkbox" id="fitur_pengingat" name="fitur_ai[]" value="pengingat_servis">
-                    <label for="fitur_pengingat">Pengingat Servis (WA Bot)</label><br>
-
-                    <input type="checkbox" id="fitur_reservasi" name="fitur_ai[]" value="reservasi">
-                    <label for="fitur_reservasi">Chatbot Reservasi</label><br>
-
-                    <input type="checkbox" id="fitur_stok" name="fitur_ai[]" value="manajemen_stok">
-                    <label for="fitur_stok">Prediksi Stok Sparepart</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="fitur_pengingat" name="fitur_ai[]" value="pengingat_servis">
+                        <label for="fitur_pengingat">Pengingat Servis (WA Bot)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="fitur_reservasi" name="fitur_ai[]" value="reservasi">
+                        <label for="fitur_reservasi">Chatbot Reservasi</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="fitur_stok" name="fitur_ai[]" value="manajemen_stok">
+                        <label for="fitur_stok">Prediksi Stok Sparepart</label>
+                    </div>
                 </fieldset>
-                <br>
 
-                <label for="pesan_tambahan">Kendala Bengkel (Opsional):</label><br>
-                <textarea id="pesan_tambahan" name="pesan_tambahan" rows="4" cols="50"></textarea>
+                <div class="form-group">
+                    <label for="pesan_tambahan">Kendala Bengkel (Opsional):</label>
+                    <textarea id="pesan_tambahan" name="pesan_tambahan" rows="4" placeholder="Ceritakan masalah operasional bengkel Anda..."></textarea>
+                </div>
 
-                <br><br>
                 <button type="submit">Kirim Konsultasi</button>
             </form>
         </section>
@@ -114,5 +140,4 @@
     </footer>
 
 </body>
-
 </html>
